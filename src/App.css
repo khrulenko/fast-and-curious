@@ -3,3 +3,41 @@
   max-width: 900px;
   margin: auto;
 }
+
+.pagination {
+  display: flex;
+  width: 500px;
+  margin: 50px auto;
+}
+
+.paginationPage,
+.paginationPrevious,
+.paginationNext {
+  width: 80px;
+  margin: 0 10px;
+  padding-left: 0;
+
+  border: 1px solid rgba(39, 144, 163, 0.466);
+  border-radius: 10px;
+
+  text-align: center;
+  list-style-type: none;
+
+  cursor: pointer;
+}
+
+.paginationLink {
+  display: block;
+  width: 80px;
+  border-radius: 10px;
+}
+
+.paginationEllipsis {
+  list-style-type: none;
+}
+
+.paginationActive {
+  border: none;
+  background-color: rgb(39, 144, 163);
+  color: white;
+}

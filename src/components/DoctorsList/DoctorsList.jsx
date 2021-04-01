@@ -9,9 +9,13 @@ export const DoctorsList = ({ DoctorsToShow }) => {
       className='doctorsList'
     >
       {DoctorsToShow.map(doctor => (
-        <DoctorCard
-          doctor={doctor}
-        />
+        <li
+          key={doctor.id}
+        >
+          <DoctorCard
+            doctor={doctor}
+          />
+        </li>
       ))}
     </ul>
   );
