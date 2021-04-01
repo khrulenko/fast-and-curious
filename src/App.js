@@ -58,6 +58,10 @@ export function App() {
       breakClassName={"paginationEllipsis"}
       activeClassName={"paginationActive"}
       pageLinkClassName={"paginationLink"}
+      previousLinkClassName={"paginationPreviousLink"}
+      nextLinkClassName={"paginationNextLink"}
+      previousLabel={"<"}
+      nextLabel={">"}
     />
 
     </>
