@@ -7,7 +7,8 @@
 .pagination {
   display: flex;
   justify-content: center;
-  width: 350px;
+  gap: 10px;
+
   margin: 50px auto;
   padding-left: 0;
 }
@@ -16,14 +17,15 @@
 .paginationPrevious,
 .paginationNext {
   width: 50px;
-  margin: 0 10px;
   padding-left: 0;
 
-  border: 1px solid rgba(39, 144, 163, 0.466);
+  background-color: #42424A;
+  border: 1px solid #42424A;
   border-radius: 10px;
 
   text-align: center;
   list-style-type: none;
+  color: white;
 
   cursor: pointer;
 }
@@ -33,7 +35,10 @@
 .paginationNextLink {
   display: block;
   width: 50px;
+
   border-radius: 10px;
+
+  outline: none;
 }
 
 .paginationEllipsis {
@@ -41,7 +46,13 @@
 }
 
 .paginationActive {
-  border: none;
-  background-color: rgb(39, 144, 163);
+  border-color: #97C124;
+  background-color: #97C124;
   color: white;
+}
+
+.paginationPage:hover,
+.paginationPrevious:hover,
+.paginationNext:hover {
+  box-shadow: 0 0 5px #42424A;
 }

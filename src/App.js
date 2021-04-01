@@ -7,6 +7,7 @@ import './App.css';
 export function App() {
   const [doctors, setDoctors] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
+  const amountPerPage = 9;
 
   useEffect(() => {
     getDoctors();
@@ -16,6 +17,13 @@ export function App() {
     return fetch(`https://5fe21e077a94870017682132.mockapi.io/api/testtask/doctors`)
       .then(promise => promise.json())
         .then(doctors => setDoctors(doctors));
+  };
+
+  function getDoctorsToShow(doctors, amountPerPage) {
+    return doctors.slice(
+      (currentPage - 1) * amountPerPage,
+      ((currentPage - 1) * amountPerPage) + amountPerPage
+    )
   };
 
   return (
@@ -42,15 +50,12 @@ export function App() {
     </div>
 
     <DoctorsList
-      DoctorsToShow={doctors.slice(
-        (currentPage - 1) * 9,
-        ((currentPage - 1) * 9) + 9
-      )}
+      DoctorsToShow={getDoctorsToShow(doctors, amountPerPage)}
     />
 
-    <ReactPaginate
+    {!!doctors.length && <ReactPaginate
       onPageChange={(e) => setCurrentPage(e.selected + 1)}
-      pageCount={Math.ceil(doctors.length / 9)}
+      pageCount={Math.ceil(doctors.length / amountPerPage)}
       containerClassName={"pagination"}
       pageClassName={"paginationPage"}
       previousClassName={"paginationPrevious"}
@@ -62,7 +67,7 @@ export function App() {
       nextLinkClassName={"paginationNextLink"}
       previousLabel={"<"}
       nextLabel={">"}
-    />
+    /> }
 
     </>
   );

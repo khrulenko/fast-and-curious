@@ -7,6 +7,7 @@ export const DoctorCard = ({ doctor }) => {
     <a
       className="doctorCard"
       href={doctor.link}
+      target="_blank"
     >
 
       <img
