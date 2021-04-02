@@ -10,11 +10,11 @@ export function App() {
   const amountPerPage = 9;
 
   useEffect(() => {
-    getDoctors();
+    getAllDoctors();
   }, [currentPage]);
 
-  function getDoctors() {
-    return fetch(`https://5fe21e077a94870017682132.mockapi.io/api/testtask/doctors`)
+  function getAllDoctors() {
+    return fetch("https://5fe21e077a94870017682132.mockapi.io/api/testtask/doctors")
       .then(promise => promise.json())
         .then(doctors => setDoctors(doctors));
   };
@@ -28,47 +28,45 @@ export function App() {
 
   return (
     <>
-
-    <div
-      className="heading"
-    >
-      <h2>
-        Наши специалисты
-      </h2>
-
-      <p
-        className="description"
+      <div
+        className="heading"
       >
-        Высококвалифицированные врачи-стоматологи AstraDent регулярно посещают
-        профессиональные мастер-классы и стажируются в Украине и за рубежом,
-        чтобы быть в курсе всех современных тенденций дентальной медицины.
-        Наши специалисты оснащены современной техникой мировых лидеров
-        производства стоматологического оборудования и используют только
-        высококачественные сертифицированные материалы от ведущих компаний.
-      </p>
+        <h2>
+          Наши специалисты
+        </h2>
 
-    </div>
+        <p
+          className="description"
+        >
+          Высококвалифицированные врачи-стоматологи AstraDent регулярно посещают
+          профессиональные мастер-классы и стажируются в Украине и за рубежом,
+          чтобы быть в курсе всех современных тенденций дентальной медицины.
+          Наши специалисты оснащены современной техникой мировых лидеров
+          производства стоматологического оборудования и используют только
+          высококачественные сертифицированные материалы от ведущих компаний.
+        </p>
 
-    <DoctorsList
-      DoctorsToShow={getDoctorsToShow(doctors, amountPerPage)}
-    />
+      </div>
 
-    {!!doctors.length && <ReactPaginate
-      onPageChange={(e) => setCurrentPage(e.selected + 1)}
-      pageCount={Math.ceil(doctors.length / amountPerPage)}
-      containerClassName={"pagination"}
-      pageClassName={"paginationPage"}
-      previousClassName={"paginationPrevious"}
-      nextClassName={"paginationNext"}
-      breakClassName={"paginationEllipsis"}
-      activeClassName={"paginationActive"}
-      pageLinkClassName={"paginationLink"}
-      previousLinkClassName={"paginationPreviousLink"}
-      nextLinkClassName={"paginationNextLink"}
-      previousLabel={"<"}
-      nextLabel={">"}
-    /> }
+      <DoctorsList
+        DoctorsToShow={getDoctorsToShow(doctors, amountPerPage)}
+      />
 
+      {!!doctors.length && <ReactPaginate
+        onPageChange={(e) => setCurrentPage(e.selected + 1)}
+        pageCount={Math.ceil(doctors.length / amountPerPage)}
+        containerClassName={"pagination"}
+        pageClassName={"paginationPage"}
+        previousClassName={"paginationPrevious"}
+        nextClassName={"paginationNext"}
+        breakClassName={"paginationEllipsis"}
+        activeClassName={"paginationActive"}
+        pageLinkClassName={"paginationLink"}
+        previousLinkClassName={"paginationPreviousLink"}
+        nextLinkClassName={"paginationNextLink"}
+        previousLabel={"<"}
+        nextLabel={">"}
+      />}
     </>
   );
 }
