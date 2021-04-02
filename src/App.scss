@@ -1,3 +1,6 @@
+$main-color: #42424A;
+$second-color: #97C124;
+
 .heading {
   padding: 0 50px 0 50px;
   max-width: 900px;
@@ -23,8 +26,8 @@
   width: 50px;
   padding-left: 0;
 
-  background-color: #42424A;
-  border: 1px solid #42424A;
+  background-color: $main-color;
+  border: 1px solid $main-color;
   border-radius: 10px;
 
   text-align: center;
@@ -50,13 +53,13 @@
 }
 
 .paginationActive {
-  border-color: #97C124;
-  background-color: #97C124;
+  border-color: $second-color;
+  background-color: $second-color;
   color: white;
 }
 
 .paginationPage:hover,
 .paginationPrevious:hover,
 .paginationNext:hover {
-  box-shadow: 0 0 5px #42424A;
+  box-shadow: 0 0 5px $main-color;
 }

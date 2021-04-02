@@ -1,6 +1,6 @@
 import React from 'react';
 import { DoctorCard } from '../DoctorCard/DoctorCard';
-import './DoctorsList.css';
+import './DoctorsList.scss';
 
 export const DoctorsList = ({ DoctorsToShow }) => {
 

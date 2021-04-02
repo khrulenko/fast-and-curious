@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { DoctorsList } from './components/DoctorsList/DoctorsList';
 import ReactPaginate from 'react-paginate';
 
-import './App.css';
+import './App.scss';
 
 export function App() {
   const [doctors, setDoctors] = useState([]);

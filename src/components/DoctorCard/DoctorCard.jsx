@@ -1,5 +1,5 @@
 import React from 'react';
-import './DoctorCard.css';
+import './DoctorCard.scss';
 
 export const DoctorCard = ({ doctor }) => {
 
