@@ -66,6 +66,7 @@ export function App() {
         nextLinkClassName={"paginationNextLink"}
         previousLabel={"<"}
         nextLabel={">"}
+        disabledClassName={"paginationDisabled"}
       />}
     </>
   );

@@ -46,3 +46,20 @@ $main-border-radius: 10px;
   text-align: center;
   color: gray;
 }
+
+@media screen and (max-width: 556px) {
+  $photo-size-mobile: 250px;
+
+  .doctorCard {
+    max-width: $photo-size-mobile;
+  }
+
+  .doctorPhoto {
+    width: $photo-size-mobile;
+    height: $photo-size-mobile;
+  }
+
+  .doctorName {
+    font-size: 20px;
+  }
+}
