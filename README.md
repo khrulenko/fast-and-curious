@@ -18,7 +18,7 @@ Used Technologies and methodologies:
 
 HTML/CSS(SASS),
 
-JavaScript
+JavaScript,
 
 React:
 functional components;
@@ -27,4 +27,4 @@ React hooks: useEffect, useState;
 
 ### Deployment
 
-npm run deploy
+npm run deploy;
