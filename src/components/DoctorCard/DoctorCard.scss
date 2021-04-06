@@ -1,0 +1,65 @@
+$photo-size: 180px;
+$main-border-radius: 10px;
+
+.doctorCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: $photo-size;
+  margin-top: 30px;
+
+  border-radius: $main-border-radius;
+
+  text-decoration: none;
+  color: black;
+
+  transition: all 0.3s;
+}
+
+.doctorCard:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 10px #42424A;
+}
+
+.doctorPhoto {
+  width: $photo-size;
+  height: $photo-size;
+
+  margin-bottom: 15px;
+
+  transition: all 0.3s;
+}
+
+.doctorPhoto:hover {
+  border-top-left-radius: $main-border-radius;
+  border-top-right-radius: $main-border-radius;
+}
+
+.doctorName {
+  margin: 15px 0 10px 0;
+  font-weight: bold;
+}
+
+.speciality {
+  margin: 0 0 30px 0;
+
+  text-align: center;
+  color: gray;
+}
+
+@media screen and (max-width: 556px) {
+  $photo-size-mobile: 250px;
+
+  .doctorCard {
+    max-width: $photo-size-mobile;
+  }
+
+  .doctorPhoto {
+    width: $photo-size-mobile;
+    height: $photo-size-mobile;
+  }
+
+  .doctorName {
+    font-size: 20px;
+  }
+}
